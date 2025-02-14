@@ -8,6 +8,19 @@ const[cars,setCars] = useState({
     color:"red"
 })
 
+const[count,setCount] = useState(0);
+const[value,setValue] = useState("");
+
+const handlechange = (e)=>{
+    setValue(e.target.value);
+
+
+}
+
+const handleincrement = ()=>{
+    setCount(()=>count+1)
+}
+
 const colorupdate = ()=>{
     setCars(previousstate => {
         return {...previousstate,color :'blue'}  //passing a fun inside setcars that receives previous state and spread it and overwrite the color
@@ -22,6 +35,7 @@ const listitems = foods.map((food,index)=>(
         
 ));
 
+
     return(
         <>
         <h1>This is my {cars.name}</h1>
@@ -30,6 +44,15 @@ const listitems = foods.map((food,index)=>(
         <button onClick={colorupdate}>Click to color update</button>
 
         <ul>{listitems}</ul>
+
+        <h1>Numbers: {count}</h1>
+        <button onClick={handleincrement}> Click to increment</button>
+
+
+        <label>Name</label>
+        <input onChange={handlechange} value={value} placeholder='enter ' />
+        <h1>{value}</h1>
+        
 
         
         </>
