@@ -1,10 +1,10 @@
 import React from 'react'
-import Pagination from './Comonents/Pagination/Pagination'
+import Hooks from './Comonents/Hooks/Hooks'
 
 function App() {
   return (
     <div>
-      <Pagination/>
+    <Hooks/>
     </div>
   )
 }
