@@ -13,14 +13,29 @@ const colorupdate = ()=>{
         return {...previousstate,color :'blue'}  //passing a fun inside setcars that receives previous state and spread it and overwrite the color
     })
 }
+
+
+const foods = ["Briyani",'Parotta','chicken','curdrice'];
+const listitems = foods.map((food,index)=>(
+    <li key={index}>{food}</li>
+    
+        
+));
+
     return(
         <>
         <h1>This is my {cars.name}</h1>
         <p>this is the engine model {cars.enginetype} and price is {cars.price}</p>
         <h1>color is {cars.color}</h1>
         <button onClick={colorupdate}>Click to color update</button>
+
+        <ul>{listitems}</ul>
+
         
         </>
+
+        
+    
     )
 
 }
